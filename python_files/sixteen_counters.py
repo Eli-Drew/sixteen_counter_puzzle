@@ -10,14 +10,9 @@ Purpose:   This is a program that will develop a sequence to best
            aid in finding an exact proof of the solution.
 =======================================================================
 """
+
 #=============================================================
-def main():
-    board = createBoard()
-    displayBoard(board)
-    board = singleMove(board)
-    displayBoard(board)
-#=============================================================
-def createBoard():
+def create_board():
     """This function creates our playing board.
         Values initialized to '0'."""
     rows = 4
@@ -30,20 +25,25 @@ def createBoard():
 
     return playingBoard
 #=============================================================
-def displayBoard(matrix):
+def display_board(matrix):
     """This function displays a previously created matrix."""
 
-    for rowIndex in range(len(matrix)):
-        for colIndex in range(len(matrix[rowIndex])):
-            print(matrix[rowIndex][colIndex], end = " ")
+    # this loop prints it prettier.
+    for row_index in range(len(matrix)):
+        for col_index in range(len(matrix[row_index])):
+            print(matrix[row_index][col_index], end = " ")
         print() #moving cursor to next line.
+
+    # # this loop is a little uglier but faster.
+    # for row in range(len(matrix)):
+    #     print(matrix[row])
 #=============================================================
-def singleMove(matrix):
+def single_move(matrix):
     """This function represents a single move on the board.
         It will take a 2x2 square on the board and flip all
-        pieces to the other side. User defines a move by
-        inputing the coordinates for top left corner of 2x2
-        they want to flip."""
+        pieces to either a 0 or 1 depending on what the current piece is.
+        User defines a move by inputing the coordinates for top left corner 
+        of 2x2 they want to flip."""
     
     #input will be in form (x,y)
     #input can be wrong but this is for me. 
@@ -76,8 +76,17 @@ def singleMove(matrix):
     
     return matrix
 #=============================================================
+def 
 
-        
+#=============================================================
+def main():
+    board = create_board()
+    display_board(board)
+    board = single_move(board)
+    display_board(board)
+#=============================================================
+
+# if __name__ == "__main__":
 main()
 
     
