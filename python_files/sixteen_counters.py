@@ -12,8 +12,6 @@ Purpose:   This is a program that will develop a sequence to best
 """
 
 #=============================================================
-
-
 def create_board():
     """This function creates our playing board.
         Values initialized to '0'."""
