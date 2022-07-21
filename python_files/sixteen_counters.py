@@ -12,7 +12,6 @@ Purpose:   This is a program that will develop a sequence to best
 """
 
 #=============================================================
-from sqlalchemy import false, true
 
 
 def create_board():
