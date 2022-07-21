@@ -12,6 +12,9 @@ Purpose:   This is a program that will develop a sequence to best
 """
 
 #=============================================================
+from sqlalchemy import false, true
+
+
 def create_board():
     """This function creates our playing board.
         Values initialized to '0'."""
@@ -76,14 +79,51 @@ def single_move(matrix):
     
     return matrix
 #=============================================================
-def 
+def check_if_won(board_matrix):
+
+    break_out_of_loop_flag = False
+    previous_piece = None
+
+    for row in board_matrix:
+        # print(row)
+        if previous_piece == 1:
+            previous_piece = 0
+        elif previous_piece == 0:
+            previous_piece = 1
+        else: 
+            previous_piece = previous_piece
+
+        for space in row:
+            # print(space)
+            if space == previous_piece:
+                print("Haven't won yet.")
+                # break_out_of_loop_flag = True
+                # break
+                return False
+            previous_piece = space
+
+        if break_out_of_loop_flag == True:
+            break
+    return True
+
 
 #=============================================================
 def main():
+
+    has_won = False
     board = create_board()
-    display_board(board)
-    board = single_move(board)
-    display_board(board)
+
+    while not has_won:
+    
+        display_board(board)
+        board = single_move(board)
+        display_board(board)
+        has_won = check_if_won(board)
+
+    print("Congrats!")
+
+
+
 #=============================================================
 
 # if __name__ == "__main__":
