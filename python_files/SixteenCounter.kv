@@ -1,68 +1,113 @@
 #:kivy 2.0.0
 
-GameWindow:
-
-<GameBoard>:
-
-## the Lables in GameWindow will go here eventually once i figure out how to fill entire window
+WindowManger:
+    MainWindow:
+    GameWindow:
 
 
 <GameWindow>:
+    name: "Game"
     # board: game_board_kv
 
     # GameBoard:
     #     id: game_board_kv
     #     size_hint: 1,1
 
-    rows: 4
-    cols: 4
+    GridLayout:
 
-    Label:
-        text: "Hello 1"
+        rows: 4
+        cols: 4
 
-    Label:
-        text: "Hello 2"
+        Label:
+            text: "0"
+            font_size: 40
 
-    Label:
-        text: "Hello 3"
+        Label:
+            text: "0"
+            font_size: 40
 
-    Label:
-        text: "Hello 4"
+        Label:
+            text: "0"
+            font_size: 40
 
-    Label:
-        text: "Hello 5"
+        Label:
+            text: "0"
+            font_size: 40
 
-    Label:
-        text: "Hello 6"
+        Label:
+            text: "0"
+            font_size: 40
 
-    Label:
-        text: "Hello 7"
+        Label:
+            text: "0"
+            font_size: 40
 
-    Label:
-        text: "Hello 8"
+        Label:
+            text: "0"
+            font_size: 40
 
-    Label:
-        text: "Hello 9"
+        Label:
+            text: "0"
+            font_size: 40
 
-    Label:
-        text: "Hello 10"
+        Label:
+            text: "0"
+            font_size: 40
 
-    Label:
-        text: "Hello 11"
+        Label:
+            text: "0"
+            font_size: 40
 
-    Label:
-        text: "Hello 12"
+        Label:
+            text: "0"
+            font_size: 40
 
-    Label:
-        text: "Hello 13"
+        Label:
+            text: "0"
+            font_size: 40
 
-    Label:
-        text: "Hello 14"
+        Label:
+            text: "0"
+            font_size: 40
 
-    Label:
-        text: "Hello 15"
+        Label:
+            text: "0"
+            font_size: 40
 
-    Label:
-        text: "Hello 16"
+        Label:
+            text: "0"
+            font_size: 40
 
-    
+        Label:
+            text: "0"
+            font_size: 40
+
+<MainWindow>:
+    name: "main"
+    orientation: 'vertical'
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            id: main_window_title
+            text: 'Welcome to Sixteen Counter Puzzle!'
+            size_hint_x: 1
+            size_hint_y: 2
+
+        Button:
+            text: "Start Game"
+            size_hint_x: 0.25
+            on_release: app.root.current = "Game"
+
+        Button:
+            text: "Rules"
+            size_hint_x: 0.25
+
+        Button:
+            text: "Scores"
+            size_hint_x: 0.25
+
+        Button:
+            text: "Quit to Desktop"
+            size_hint_x: 0.25
+        
+

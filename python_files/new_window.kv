@@ -1,0 +1,22 @@
+#:kivy 2.0.0
+
+WindowManger:
+    MainWindow:
+    GameWindow:
+
+<MainWindow>:
+    name: "main"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        Button:
+            text: "next"
+            on_release: app.root.current = "Game"
+
+
+<GameWindow>:
+    name: "Game"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
