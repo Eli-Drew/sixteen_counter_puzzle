@@ -4,7 +4,29 @@ WindowManger:
     MainWindow:
     GameWindow:
 
+<-LabelWithBorder@Label>:
+    border_width: 0
+    border_color: [1,1,1,1]
+    canvas.before:    
+        Color:
+            rgba: root.border_color if root.border_width > 0 else [0,0,0,1]
+        Rectangle:
+            size: self.size
+            pos: self.pos
+        Color:
+            rgba: 0, 0, 0, 1
+        Rectangle:
+            size: self.width - 2*root.border_width, self.height - 2*root.border_width
+            pos: int(self.center_x - (self.width - 2*root.border_width)/2.), int(self.center_y - (self.height - 2*root.border_width)/2.)
+    canvas:    
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            texture: self.texture
+            size: self.texture_size[0] - 2*root.border_width, self.texture_size[1] - 2*root.border_width
+            pos: int(self.center_x - self.width/2.) + root.border_width, int(self.center_y - self.height/2.) + root.border_width
 
+            
 <GameWindow>:
     name: "Game"
     # board: game_board_kv
@@ -17,70 +39,72 @@ WindowManger:
 
         rows: 4
         cols: 4
+        spaceing: 1
 
-        Label:
-            text: "0"
-            font_size: 40
+        LabelWithBorder:
+            border_width: 3
+            border_color: [128/255,128/255,128/255,1]
 
-        Label:
-            text: "0"
-            font_size: 40
+        
+        LabelWithBorder:
+            border_width: 3
+            border_color: [128/255,128/255,128/255,1]
 
-        Label:
-            text: "0"
-            font_size: 40
+        LabelWithBorder:
+            border_width: 3
+            border_color: [128/255,128/255,128/255,1]
 
-        Label:
-            text: "0"
-            font_size: 40
+        LabelWithBorder:
+            border_width: 3
+            border_color: [128/255,128/255,128/255,1]
 
-        Label:
-            text: "0"
-            font_size: 40
+        LabelWithBorder:
+            border_width: 3
+            border_color: [128/255,128/255,128/255,1]
 
-        Label:
-            text: "0"
-            font_size: 40
+        LabelWithBorder:
+            border_width: 3
+            border_color: [128/255,128/255,128/255,1]
 
-        Label:
-            text: "0"
-            font_size: 40
+        LabelWithBorder:
+            border_width: 3
+            border_color: [128/255,128/255,128/255,1]
 
-        Label:
-            text: "0"
-            font_size: 40
+        LabelWithBorder:
+            border_width: 3
+            border_color: [128/255,128/255,128/255,1]
 
-        Label:
-            text: "0"
-            font_size: 40
+        LabelWithBorder:
+            border_width: 3
+            border_color: [128/255,128/255,128/255,1]
 
-        Label:
-            text: "0"
-            font_size: 40
+        LabelWithBorder:
+            border_width: 3
+            border_color: [128/255,128/255,128/255,1]
 
-        Label:
-            text: "0"
-            font_size: 40
+        LabelWithBorder:
+            border_width: 3
+            border_color: [128/255,128/255,128/255,1]
 
-        Label:
-            text: "0"
-            font_size: 40
+        LabelWithBorder:
+            border_width: 3
+            border_color: [128/255,128/255,128/255,1]
 
-        Label:
-            text: "0"
-            font_size: 40
+        LabelWithBorder:
+            border_width: 3
+            border_color: [128/255,128/255,128/255,1]
 
-        Label:
-            text: "0"
-            font_size: 40
+        LabelWithBorder:
+            border_width: 3
+            border_color: [128/255,128/255,128/255,1]
 
-        Label:
-            text: "0"
-            font_size: 40
+        LabelWithBorder:
+            border_width: 3
+            border_color: [128/255,128/255,128/255,1]
 
-        Label:
-            text: "0"
-            font_size: 40
+        LabelWithBorder:
+            border_width: 3
+            border_color: [128/255,128/255,128/255,1]
 
 <MainWindow>:
     name: "main"
